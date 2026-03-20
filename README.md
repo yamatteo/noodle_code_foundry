@@ -33,8 +33,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-- Create an issue on Gitlab
-- Email: mbortolotto@fbk.eu
+- Create an issue on Github
+- Email: yamatteo@gmail.com
 - Documentation: [Link to docs]
 
 ---
