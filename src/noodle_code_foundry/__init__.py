@@ -1,2 +1,3 @@
-def main() -> None:
-    print("Hello from noodle-code-foundry!")
+from .main import main
+
+__all__ = ["main"]

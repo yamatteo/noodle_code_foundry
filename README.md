@@ -6,14 +6,14 @@ A Python project template and cookbook for sharing reusable recipes, patterns, a
 
 ```
 short_name/
-├─ README.md
+├─ .gitignore
+├─ LICENSE
 ├─ pyproject.toml
-├─ src/
-│  └─ short_name/
-│     ├─ __init__.py
-│     └─ main.py
-└─ tests/
-   └─ test_main.py
+├─ README.md
+└─ src/
+   └─ short_name/
+      ├─ __init__.py
+      └─ main.py
 ```
 
 ## Cookbook
