@@ -7,7 +7,9 @@ authors = [
     { name = "Matteo Bortolotto", email = "mbortolotto@fbk.eu" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "python-dotenv>=1.2.2",
+]
 
 [project.scripts]
 noodle-code-foundry = "noodle_code_foundry:main"
