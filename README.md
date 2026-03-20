@@ -11,12 +11,10 @@ short_name/
 ├─ LICENSE
 ├─ pyproject.toml
 ├─ README.md
-├─ src/
-│  └─ short_name/
-│     ├─ __init__.py
-│     └─ main.py
-└─ tests/
-   └─ test_main.py
+└─ src/
+   └─ short_name/
+      ├─ __init__.py
+      └─ main.py
 ```
 
 ## Cookbook
