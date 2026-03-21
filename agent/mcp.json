@@ -1,0 +1,50 @@
+{
+  "mcpServers": {
+    "git": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-git"
+      ]
+    },
+    "github": {
+      "serverUrl": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${env:GITHUB_TOKEN}"
+      }
+    },
+    "jupyter": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${env:JUPYTER_MCP_WRAPPER_ROOT}",
+        "python",
+        "main.py"
+      ],
+      "env": {
+        "ALLOW_IMG_OUTPUT": "false",
+        "JUPYTER_TOKEN": "${env:JUPYTER_MCP_WRAPPER_TOKEN}",
+        "JUPYTER_PROJECT_ROOT": "${env:PROJECT_ROOT}"
+      }
+    },
+    "sympy-mcp": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "${env:SYMPY_MCP_ROOT}",
+        "python",
+        "server.py"
+      ],
+      "env": {}
+    },
+    "tavily-remote-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.tavily.com/mcp/?tavilyApiKey=${env:TAVILY_API_KEY}"
+      ]
+    }
+  }
+}

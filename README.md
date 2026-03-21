@@ -21,6 +21,37 @@ short_name/
 
 This section contains reusable recipes and patterns for common Python development tasks.
 
+### Agents skills and mcp servers
+
+This project includes a sophisticated agent system with specialized skills for task management, evaluation, and execution. The agent skills are defined as markdown templates in the `agent/instructions/` directory and are designed to work with Cascade (Windsurf's AI assistant) or Claude Code. You have to make sure to replace the path variables with the actual paths in your project and move the files to the appropriate location depending on your IDE/Agent of choice.
+
+Additionally, the project includes a set of MCP (Model Context Protocol) servers that can be used to extend the capabilities of the agent. The MCP servers are defined in the `agent/mcp.json` file. Systems like Windsurf allow interpolation of environment variables in the MCP configuration. If your settings don't support this, you will have to replace the path and other environment variables with the actual raw values in your settings.
+
+#### Configuration Variables
+
+The agent skills use these configurable path variables:
+
+- **`${DOCS_PATH}`**: Path to documentation directory (example: `docs/`)
+- **`${PLANNED_TASKS_PATH}`**: Path to planned tasks file (example: `PLANNED_TASKS.md`)
+- **`${PROPOSED_TASKS_PATH}`**: Path to proposed tasks file (example: `PROPOSED_TASKS.md`)
+
+#### Skill Structure
+
+Each agent skill follows a consistent YAML frontmatter format:
+
+```yaml
+---
+name: skill-name
+description: Brief description of the skill's purpose
+auto_execution_mode: 0
+disable-model-invocation: true
+---
+
+Markdown content here.
+```
+
+
+
 ### Environment Variables with python-dotenv
 
 This project uses `python-dotenv` to manage environment variables from a local `.env` file.
