@@ -3,7 +3,7 @@ name: Build and Deploy Zola Site
 on:
   push:
     branches:
-      - main
+      - zola
   workflow_dispatch:
 
 permissions:
