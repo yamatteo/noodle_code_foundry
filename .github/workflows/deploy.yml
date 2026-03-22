@@ -30,7 +30,7 @@ jobs:
       - name: Build with Zola
         run: |
           cd zdocs
-          zola build --base-url ${{ steps.pages.outputs.base_url }}
+          zola build --base-url ${{ ZOLA_BASE_URL }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -40,7 +40,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ ZOLA_BASE_URL }}
     runs-on: ubuntu-latest
     needs: build
     steps:
