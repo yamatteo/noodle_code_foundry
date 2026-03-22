@@ -1,0 +1,59 @@
+# Zola site configuration
+base_url = "${ZOLA_BASE_URL}"
+title = "Noodle Code Foundry Documentation"
+description = "A comprehensive documentation site for the Noodle Code Foundry project"
+author = "Matteo"
+default_language = "en"
+
+# Theme configuration
+theme = "MATbook"
+
+# Build settings
+compile_sass = true
+build_search_index = true
+minify_html = true
+
+# Taxonomies
+taxonomies = [
+  {name = "tags", feed = true},
+  {name = "categories", feed = true}
+]
+
+# MATbook theme specific settings
+[extra]
+# MathJax support for mathematical content
+mathjax = true
+
+# MATbook theme settings
+[extra.booktheme]
+# Enable chapter numbering
+book_number_chapters = true
+# Show only current section pages in navigation
+book_only_current_section_pages = false
+# Home link (can be your homepage or guide page)
+home = "/"
+
+# Repository links for editing
+[extra.booktheme.edit]
+# GitHub repository for "Edit this page" functionality
+repository_url = "${REPOSITORY_URL}"
+# Branch to edit
+branch = "main"
+
+# Navigation menu
+[extra.booktheme.menu]
+# Links to show in navigation
+[[extra.booktheme.menu.links]]
+name = "GitHub"
+url = "${REPOSITORY_URL}"
+
+[[extra.booktheme.menu.links]]
+name = "Main Project"
+url = "${REPOSITORY_URL}"
+
+# Markdown rendering settings
+[markdown]
+highlighting = { theme = "github-dark" }
+render_emoji = true
+external_links_target_blank = true
+smart_punctuation = true
