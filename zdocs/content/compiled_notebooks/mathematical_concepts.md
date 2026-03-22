@@ -8,8 +8,8 @@ in_search_index = true
 
 [extra]
 notebook_source = "mathematical_concepts.ipynb"
-generated_date = "2026-03-22 12:34:51"
-execution_time = "3.23s"
+generated_date = "2026-03-22 16:10:11"
+execution_time = "3.19s"
 cell_count = 13
 +++
 
@@ -86,17 +86,17 @@ plt.show()
     <>:28: SyntaxWarning: invalid escape sequence '\s'
     <>:29: SyntaxWarning: invalid escape sequence '\s'
     <>:35: SyntaxWarning: invalid escape sequence '\s'
-    /tmp/ipykernel_2469564/74342987.py:28: SyntaxWarning: invalid escape sequence '\s'
+    /tmp/ipykernel_2802022/74342987.py:28: SyntaxWarning: invalid escape sequence '\s'
       ax1.plot(x, y, 'b-', linewidth=2, label='$f(x) = x^2 \sin(x)$')
-    /tmp/ipykernel_2469564/74342987.py:29: SyntaxWarning: invalid escape sequence '\s'
+    /tmp/ipykernel_2802022/74342987.py:29: SyntaxWarning: invalid escape sequence '\s'
       ax1.set_title('Function $f(x) = x^2 \sin(x)$', fontsize=14)
-    /tmp/ipykernel_2469564/74342987.py:35: SyntaxWarning: invalid escape sequence '\s'
+    /tmp/ipykernel_2802022/74342987.py:35: SyntaxWarning: invalid escape sequence '\s'
       ax2.plot(x, y_prime, 'r-', linewidth=2, label="$f'(x) = 2x \sin(x) + x^2 \cos(x)$")
 
 
 
     
-![png](/compiled_notebooks/mathematical-concepts/output_2_1.png)
+![png](output_2_1.png)
     
 
 
@@ -184,7 +184,7 @@ plt.show()
 
 
     
-![png](/compiled_notebooks/mathematical-concepts/output_5_0.png)
+![png](output_5_0.png)
     
 
 
@@ -249,7 +249,7 @@ print(f"Kurtosis: {norm_dist.stats('k'):.4f}")
 
 
     
-![png](/compiled_notebooks/mathematical-concepts/output_7_0.png)
+![png](output_7_0.png)
     
 
 
@@ -325,7 +325,7 @@ plt.show()
 
 
     
-![png](/compiled_notebooks/mathematical-concepts/output_9_0.png)
+![png](output_9_0.png)
     
 
 
@@ -399,28 +399,27 @@ for freq, mag in zip(peak_frequencies, peak_magnitudes):
 
 
     
-![png](/compiled_notebooks/mathematical-concepts/output_11_0.png)
+![png](output_11_0.png)
     
 
 
     Detected frequency components:
-    Frequency: 1.00 Hz, Magnitude: 497.83
-    Frequency: 3.00 Hz, Magnitude: 247.43
-    Frequency: 4.99 Hz, Magnitude: 149.09
-    Frequency: 5.99 Hz, Magnitude: 2.23
-    Frequency: 7.99 Hz, Magnitude: 5.54
-    Frequency: 9.49 Hz, Magnitude: 4.06
-    Frequency: 10.49 Hz, Magnitude: 3.43
-    Frequency: 11.99 Hz, Magnitude: 4.83
-    Frequency: 13.49 Hz, Magnitude: 2.32
-    Frequency: 14.49 Hz, Magnitude: 2.58
-    Frequency: 15.98 Hz, Magnitude: 3.05
-    Frequency: 16.98 Hz, Magnitude: 3.68
-    Frequency: 18.98 Hz, Magnitude: 5.72
-    Frequency: 19.98 Hz, Magnitude: 4.05
-    Frequency: 20.98 Hz, Magnitude: 2.41
-    Frequency: 21.98 Hz, Magnitude: 4.03
-    Frequency: 23.48 Hz, Magnitude: 4.22
+    Frequency: 1.00 Hz, Magnitude: 498.73
+    Frequency: 2.00 Hz, Magnitude: 4.35
+    Frequency: 3.00 Hz, Magnitude: 247.95
+    Frequency: 4.99 Hz, Magnitude: 149.55
+    Frequency: 7.49 Hz, Magnitude: 6.45
+    Frequency: 9.49 Hz, Magnitude: 4.86
+    Frequency: 11.99 Hz, Magnitude: 3.51
+    Frequency: 13.49 Hz, Magnitude: 5.52
+    Frequency: 14.49 Hz, Magnitude: 4.49
+    Frequency: 15.98 Hz, Magnitude: 4.24
+    Frequency: 16.98 Hz, Magnitude: 2.52
+    Frequency: 17.98 Hz, Magnitude: 3.71
+    Frequency: 19.48 Hz, Magnitude: 4.62
+    Frequency: 20.48 Hz, Magnitude: 4.22
+    Frequency: 22.48 Hz, Magnitude: 4.40
+    Frequency: 23.98 Hz, Magnitude: 3.12
 
 
 ## Summary

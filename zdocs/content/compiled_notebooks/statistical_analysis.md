@@ -8,8 +8,8 @@ in_search_index = true
 
 [extra]
 notebook_source = "statistical_analysis.ipynb"
-generated_date = "2026-03-22 12:34:57"
-execution_time = "5.71s"
+generated_date = "2026-03-22 16:10:17"
+execution_time = "5.88s"
 cell_count = 36
 +++
 
@@ -262,7 +262,7 @@ plt.show()
 
 
     
-![png](/compiled_notebooks/statistical-analysis/output_6_0.png)
+![png](output_6_0.png)
     
 
 
@@ -335,13 +335,13 @@ plt.show()
 
 
     
-![png](/compiled_notebooks/statistical-analysis/output_9_0.png)
+![png](output_9_0.png)
     
 
 
 
     
-![png](/compiled_notebooks/statistical-analysis/output_9_1.png)
+![png](output_9_1.png)
     
 
 
@@ -351,7 +351,7 @@ plt.show()
 
 
     
-![png](/compiled_notebooks/statistical-analysis/output_9_3.png)
+![png](output_9_3.png)
     
 
 
@@ -474,7 +474,7 @@ plt.show()
 
 
     
-![png](/compiled_notebooks/statistical-analysis/output_15_1.png)
+![png](output_15_1.png)
     
 
 
@@ -530,7 +530,7 @@ plt.show()
 
 
     
-![png](/compiled_notebooks/statistical-analysis/output_16_1.png)
+![png](output_16_1.png)
     
 
 
@@ -759,7 +759,7 @@ plt.show()
 
 
     
-![png](/compiled_notebooks/statistical-analysis/output_24_0.png)
+![png](output_24_0.png)
     
 
 
@@ -812,7 +812,7 @@ plt.show()
 
 
     
-![png](/compiled_notebooks/statistical-analysis/output_26_1.png)
+![png](output_26_1.png)
     
 
 
@@ -873,6 +873,8 @@ plt.show()
 ```
 
     === FIRST DIFFERENCE ===
+
+
     === AUGMENTED DICKEY-FULLER TEST ===
     ADF Statistic: -11.0505
     p-value: 0.0000
@@ -886,7 +888,7 @@ plt.show()
 
 
     
-![png](/compiled_notebooks/statistical-analysis/output_28_1.png)
+![png](output_28_2.png)
     
 
 
@@ -936,12 +938,14 @@ print(f"MAPE: {mape:.2f}%")
 ```
 
     === ARIMA MODEL ===
+
+
                                    SARIMAX Results                                
     ==============================================================================
     Dep. Variable:                  value   No. Observations:                  160
     Model:                 ARIMA(1, 1, 1)   Log Likelihood                -657.295
     Date:                Sun, 22 Mar 2026   AIC                           1320.589
-    Time:                        12:34:56   BIC                           1329.796
+    Time:                        16:10:16   BIC                           1329.796
     Sample:                    01-31-2020   HQIC                          1324.328
                              - 04-30-2033                                         
     Covariance Type:                  opg                                         
@@ -964,7 +968,7 @@ print(f"MAPE: {mape:.2f}%")
 
 
     
-![png](/compiled_notebooks/statistical-analysis/output_29_1.png)
+![png](output_29_2.png)
     
 
 
@@ -1075,7 +1079,7 @@ print(f"Bayesian 95% credible interval: [{ci_lower:.3f}, {ci_upper:.3f}]")
 
 
     
-![png](/compiled_notebooks/statistical-analysis/output_33_0.png)
+![png](output_33_0.png)
     
 
 

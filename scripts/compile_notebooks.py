@@ -200,15 +200,15 @@ def fix_image_paths(markdown_content, notebook_name):
             
             # If it's a relative path from nbconvert, adjust it
             if original_path.startswith('./'):
-                # Remove the ./ and prepend static path
+                # Remove ./ - use relative path since we're in the same directory
                 filename = original_path[2:]
-                new_path = f"/compiled_notebooks/{zola_dir_name}/{filename}"
+                new_path = filename
             elif original_path.startswith('../'):
                 # Handle relative paths
                 new_path = original_path
             else:
-                # Prepend static path
-                new_path = f"/compiled_notebooks/{zola_dir_name}/{original_path}"
+                # Use relative path since we're in the same directory
+                new_path = original_path
             
             return f'![{alt_text}]({new_path})'
         

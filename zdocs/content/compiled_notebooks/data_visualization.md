@@ -8,8 +8,8 @@ in_search_index = true
 
 [extra]
 notebook_source = "data_visualization.ipynb"
-generated_date = "2026-03-22 12:34:48"
-execution_time = "4.84s"
+generated_date = "2026-03-22 16:10:08"
+execution_time = "4.94s"
 cell_count = 16
 +++
 
@@ -137,7 +137,7 @@ plt.show()
 
 
     
-![png](/compiled_notebooks/data-visualization/output_4_0.png)
+![png](output_4_0.png)
     
 
 
@@ -197,7 +197,7 @@ print(f"Correlation coefficient: {correlation:.3f}")
 
 
     
-![png](/compiled_notebooks/data-visualization/output_6_0.png)
+![png](output_6_0.png)
     
 
 
@@ -256,13 +256,13 @@ plt.show()
 
 
     
-![png](/compiled_notebooks/data-visualization/output_8_0.png)
+![png](output_8_0.png)
     
 
 
 
     
-![png](/compiled_notebooks/data-visualization/output_8_1.png)
+![png](output_8_1.png)
     
 
 
@@ -272,7 +272,7 @@ plt.show()
 
 
     
-![png](/compiled_notebooks/data-visualization/output_8_3.png)
+![png](output_8_3.png)
     
 
 
@@ -355,13 +355,13 @@ print(f"Exponential: μ={np.mean(exponential_data):.3f}, σ={np.std(exponential_
 print(f"Bimodal: μ={np.mean(bimodal_data):.3f}, σ={np.std(bimodal_data):.3f}")
 ```
 
-    /tmp/ipykernel_2469316/1688390273.py:23: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+    /tmp/ipykernel_2801800/1688390273.py:23: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
       axes[0, 1].boxplot(data_for_box, labels=labels)
 
 
 
     
-![png](/compiled_notebooks/data-visualization/output_10_1.png)
+![png](output_10_1.png)
     
 
 
@@ -455,7 +455,7 @@ plt.show()
 
 
     
-![png](/compiled_notebooks/data-visualization/output_12_0.png)
+![png](output_12_0.png)
     
 
 
@@ -512,13 +512,13 @@ plt.suptitle('Comprehensive Data Visualization Dashboard',
 plt.show()
 ```
 
-    /tmp/ipykernel_2469316/1451512682.py:33: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+    /tmp/ipykernel_2801800/1451512682.py:33: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
       box_plot = ax_box.boxplot(box_data, labels=['X Variable', 'Y Variable'],
 
 
 
     
-![png](/compiled_notebooks/data-visualization/output_14_1.png)
+![png](output_14_1.png)
     
 
 
