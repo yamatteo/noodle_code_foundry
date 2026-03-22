@@ -19,6 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Pages
+        id: pages              # ← important: give this an id
         uses: actions/configure-pages@v4
 
       - name: Install Zola
@@ -30,7 +31,7 @@ jobs:
       - name: Build with Zola
         run: |
           cd zdocs
-          zola build --base-url ${{ steps.deployment.outputs.page_url }}
+          zola build --base-url ${{ steps.pages.outputs.base_url }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
