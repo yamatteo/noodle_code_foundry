@@ -8,3 +8,9 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Notebook execution artifacts
+*.ipynb_files/
+
+# Jupyter checkpoings
+.ipynb_checkpoints/
