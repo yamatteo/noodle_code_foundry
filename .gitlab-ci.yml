@@ -26,5 +26,6 @@ pages:
   artifacts:
     paths:
       - zdocs/public
+  publish: zdocs/public
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
