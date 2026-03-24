@@ -20,7 +20,7 @@ pages:
     - zola build --base-url ${CI_PAGES_URL}
   artifacts:
     paths:
-      - public
+      - zdocs/public
   only:
     - main
 
