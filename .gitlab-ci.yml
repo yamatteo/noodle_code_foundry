@@ -3,9 +3,10 @@ stages:
 
 default:
   image: debian:stable-slim
-  variables:
-    GIT_SUBMODULE_STRATEGY: "recursive"
-    ZOLA_VERSION: "0.22.1"  # Set your version here
+
+variables:
+  GIT_SUBMODULE_STRATEGY: "recursive"
+  ZOLA_VERSION: "0.22.1"  # Set your version here
 
 pages:
   stage: deploy
