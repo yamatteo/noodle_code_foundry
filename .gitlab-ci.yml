@@ -1,34 +1,28 @@
-# GitLab CI/CD configuration for Zola static site deployment
-# Alternative to GitHub Pages - use this if deploying to GitLab Pages
+stages:
+  - deploy
 
-image: alpine:latest
-
-variables:
-  ZOLA_VERSION: "0.22.1"
-  ZOLA_URL: "https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
-
-before_script:
-  - apk add --no-cache wget tar
-  - wget -q ${ZOLA_URL}
-  - tar -xzf zola-v*.tar.gz
-  - mv zola /usr/local/bin
+default:
+  image: debian:stable-slim
+  variables:
+    GIT_SUBMODULE_STRATEGY: "recursive"
+    ZOLA_VERSION: "0.22.1"  # Set your version here
 
 pages:
   stage: deploy
   script:
-    - cd zdocs
-    - zola build --base-url ${CI_PAGES_URL}
+    - |
+      apt-get update
+      DEBIAN_FRONTEND=noninteractive apt-get install --assume-yes --no-install-recommends wget ca-certificates
+      zola_url="https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+      if ! wget --quiet --spider $zola_url; then
+        echo "A Zola release with the specified version could not be found."
+        exit 1
+      fi
+      wget $zola_url
+      tar -xzf *.tar.gz
+      ./zola build --base-url $CI_PAGES_URL
   artifacts:
     paths:
-      - zdocs/public
-  only:
-    - main
-
-# Alternative: Use GitLab's automatic Pages detection
-# pages:
-#   stage: deploy
-#   script:
-#     - cd zdocs && zola build
-#   artifacts:
-#     paths:
-#       - public
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
