@@ -21,6 +21,7 @@ pages:
       fi
       wget $zola_url
       tar -xzf *.tar.gz
+      cd zdocs
       ./zola build --base-url $CI_PAGES_URL
   artifacts:
     paths:
