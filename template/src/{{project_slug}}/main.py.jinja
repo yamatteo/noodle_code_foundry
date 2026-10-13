@@ -5,4 +5,4 @@ load_dotenv()
 
 
 def main() -> None:
-    print("Hello from {{ project_name }}!")
+    print({{ ("Hello from " ~ project_name ~ "!") | tojson }})

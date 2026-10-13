@@ -9,3 +9,52 @@ uv run {{ project_slug | replace('_', '-') }}
 ```
 
 Copy `.env.example` to `.env` and fill in your local settings.
+{%- if zola_docs %}
+
+## Docs
+
+The documentation site lives in `zdocs/` and is built with
+[Zola](https://www.getzola.org/):
+
+```bash
+cd zdocs
+zola serve
+```
+{%- if docs_hosting == 'github-pages' %}
+
+The site is built and deployed to GitHub Pages by
+`.github/workflows/deploy.yml`. You have to tell GitHub to use the `main` branch
+as the source for the GitHub Pages site: Settings → Pages → Build and
+deployment → Source → deploy from a branch → main
+{%- elif docs_hosting == 'gitlab-pages' %}
+
+The site is built and deployed to GitLab Pages by `.gitlab-ci.yml`.
+{%- endif %}
+{%- endif %}
+{%- if zola_docs and notebooks %}
+
+## Notebooks
+
+Put Jupyter notebooks in `notebooks/`, then compile them into the docs site
+(the script needs at least one `.ipynb` in `notebooks/`):
+
+```bash
+uv run scripts/render_notebooks.sh
+```
+
+To strip notebook outputs when committing, set up a Git filter:
+
+```bash
+# In .git/config
+[filter "strip-notebook-output"]
+    clean = "jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to=notebook --stdin --stdout --log-level=ERROR"
+    smudge = "cat"
+    required
+
+# In .git/info/attributes
+*.ipynb filter=strip-notebook-output
+```
+
+This keeps the repository size small while preserving the notebook code and
+structure.
+{%- endif %}

@@ -1,10 +1,10 @@
 [project]
 name = "{{ project_slug | replace('_', '-') }}"
 version = "0.1.0"
-description = "{{ description }}"
+description = {{ description | tojson }}
 readme = "README.md"
 authors = [
-    { name = "{{ author_name }}", email = "{{ author_email }}" }
+    { name = {{ author_name | tojson }}, email = {{ author_email | tojson }} }
 ]
 {%- if license != 'None' %}
 license = "{{ license }}"
@@ -13,6 +13,16 @@ requires-python = ">=3.13"
 dependencies = [
     "python-dotenv>=1.2.2",
 ]
+{%- if zola_docs and notebooks %}
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.2.0",
+    "jupyter>=1.1.1",
+    "nbconvert>=7.17.0",
+    "papermill>=2.7.0",
+]
+{%- endif %}
 
 [project.scripts]
 {{ project_slug | replace('_', '-') }} = "{{ project_slug }}:main"

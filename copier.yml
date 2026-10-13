@@ -40,3 +40,24 @@ copyright_year:
   help: Year for the license notice
   default: "{{ '%Y' | strftime }}"
   when: "{{ license == 'MIT' }}"
+
+zola_docs:
+  type: bool
+  help: Include a Zola documentation site (MATbook theme)?
+  default: false
+
+notebooks:
+  type: bool
+  help: Include Jupyter notebook compilation into the docs?
+  default: false
+  when: "{{ zola_docs }}"
+
+docs_hosting:
+  type: str
+  help: Where to deploy the docs site
+  choices:
+    - github-pages
+    - gitlab-pages
+    - none
+  default: github-pages
+  when: "{{ zola_docs }}"
