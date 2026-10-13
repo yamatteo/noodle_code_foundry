@@ -7,7 +7,7 @@ project_name:
 project_slug:
   type: str
   help: Python package name (a valid Python identifier)
-  default: "{{ project_name | lower | replace(' ', '_') | replace('-', '_') }}"
+  default: "{{ project_name | lower | replace(' ', '_') | replace('-', '_') | regex_replace('[^a-z0-9_]', '') }}"
   validator: >-
     {% if not (project_slug | regex_search('^[A-Za-z_][A-Za-z0-9_]*$')) %}
     "{{ project_slug }}" is not a valid Python identifier
@@ -61,3 +61,8 @@ docs_hosting:
     - none
   default: github-pages
   when: "{{ zola_docs }}"
+
+pauli_braun:
+  type: bool
+  help: Recommend the pauli-braun Claude Code plugin (plan/review and build workflow)?
+  default: true

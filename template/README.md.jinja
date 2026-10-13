@@ -41,6 +41,11 @@ Put Jupyter notebooks in `notebooks/`, then compile them into the docs site
 ```bash
 uv run scripts/render_notebooks.sh
 ```
+{%- if docs_hosting != 'none' %}
+
+CI only builds what is committed, so commit `zdocs/content/compiled_notebooks/`
+and `zdocs/static/compiled_notebooks/` after rendering.
+{%- endif %}
 
 To strip notebook outputs when committing, set up a Git filter:
 
@@ -57,4 +62,13 @@ To strip notebook outputs when committing, set up a Git filter:
 
 This keeps the repository size small while preserving the notebook code and
 structure.
+{%- endif %}
+{%- if pauli_braun %}
+
+## Claude Code
+
+This project recommends the
+[pauli-braun](https://github.com/yamatteo/pauli_braun) Claude Code plugin, a
+plan/review (Pauli) and build (Braun) workflow. Claude Code offers to install it
+when you trust this folder; run `/pauli` to start.
 {%- endif %}

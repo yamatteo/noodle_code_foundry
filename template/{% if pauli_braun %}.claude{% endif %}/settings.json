@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "pauli-braun": {
+      "source": {
+        "source": "github",
+        "repo": "yamatteo/pauli_braun"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "pauli-braun@pauli-braun": true
+  }
+}
