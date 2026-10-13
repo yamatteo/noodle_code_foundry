@@ -1,0 +1,42 @@
+_subdirectory: template
+
+project_name:
+  type: str
+  help: Human-readable project name
+
+project_slug:
+  type: str
+  help: Python package name (a valid Python identifier)
+  default: "{{ project_name | lower | replace(' ', '_') | replace('-', '_') }}"
+  validator: >-
+    {% if not (project_slug | regex_search('^[A-Za-z_][A-Za-z0-9_]*$')) %}
+    "{{ project_slug }}" is not a valid Python identifier
+    {% endif %}
+
+description:
+  type: str
+  help: One-line project description
+  default: ""
+
+author_name:
+  type: str
+  help: Author name
+
+author_email:
+  type: str
+  help: Author email
+
+license:
+  type: str
+  help: Project license
+  choices:
+    - MIT
+    - Apache-2.0
+    - None
+  default: MIT
+
+copyright_year:
+  type: str
+  help: Year for the license notice
+  default: "{{ '%Y' | strftime }}"
+  when: "{{ license == 'MIT' }}"
