@@ -9,29 +9,28 @@ uv run {{ project_slug | replace('_', '-') }}
 ```
 
 Copy `.env.example` to `.env` and fill in your local settings.
-{%- if zola_docs %}
+{%- if docs %}
 
 ## Docs
 
-The documentation site lives in `zdocs/` and is built with
-[Zola](https://www.getzola.org/):
+The documentation site lives in `docs/`, is configured by `zensical.toml` and
+is built with [Zensical](https://zensical.org/):
 
 ```bash
-cd zdocs
-zola serve
+uv run --only-group docs zensical serve
 ```
 {%- if docs_hosting == 'github-pages' %}
 
 The site is built and deployed to GitHub Pages by
-`.github/workflows/deploy.yml`. You have to tell GitHub to use the `main` branch
-as the source for the GitHub Pages site: Settings → Pages → Build and
-deployment → Source → deploy from a branch → main
+`.github/workflows/deploy.yml`. You have to tell GitHub to deploy the site with
+GitHub Actions: Settings → Pages → Build and deployment → Source → GitHub
+Actions
 {%- elif docs_hosting == 'gitlab-pages' %}
 
 The site is built and deployed to GitLab Pages by `.gitlab-ci.yml`.
 {%- endif %}
 {%- endif %}
-{%- if zola_docs and notebooks %}
+{%- if docs and notebooks %}
 
 ## Notebooks
 
@@ -43,8 +42,8 @@ uv run scripts/render_notebooks.sh
 ```
 {%- if docs_hosting != 'none' %}
 
-CI only builds what is committed, so commit `zdocs/content/compiled_notebooks/`
-and `zdocs/static/compiled_notebooks/` after rendering.
+CI only builds what is committed, so commit `docs/compiled_notebooks/` after
+rendering.
 {%- endif %}
 
 To strip notebook outputs when committing, set up a Git filter:

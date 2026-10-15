@@ -13,15 +13,20 @@ requires-python = ">=3.13"
 dependencies = [
     "python-dotenv>=1.2.2",
 ]
-{%- if zola_docs and notebooks %}
+{%- if docs %}
 
 [dependency-groups]
+docs = [
+    "zensical>=0.0.69",
+]
+{%- if notebooks %}
 dev = [
     "ipykernel>=7.2.0",
     "jupyter>=1.1.1",
     "nbconvert>=7.17.0",
     "papermill>=2.7.0",
 ]
+{%- endif %}
 {%- endif %}
 
 [project.scripts]

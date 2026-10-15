@@ -41,16 +41,16 @@ copyright_year:
   default: "{{ '%Y' | strftime }}"
   when: "{{ license == 'MIT' }}"
 
-zola_docs:
+docs:
   type: bool
-  help: Include a Zola documentation site (MATbook theme)?
+  help: Include a Zensical documentation site?
   default: false
 
 notebooks:
   type: bool
   help: Include Jupyter notebook compilation into the docs?
   default: false
-  when: "{{ zola_docs }}"
+  when: "{{ docs }}"
 
 docs_hosting:
   type: str
@@ -60,7 +60,7 @@ docs_hosting:
     - gitlab-pages
     - none
   default: github-pages
-  when: "{{ zola_docs }}"
+  when: "{{ docs }}"
 
 pauli_braun:
   type: bool

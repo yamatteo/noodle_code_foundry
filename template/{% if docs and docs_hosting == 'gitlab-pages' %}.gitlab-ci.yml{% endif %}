@@ -1,0 +1,26 @@
+stages:
+  - deploy
+
+default:
+  image: ghcr.io/astral-sh/uv:python3.13-trixie-slim
+
+variables:
+  UV_CACHE_DIR: .uv-cache
+  UV_LINK_MODE: copy
+
+pages:
+  stage: deploy
+  script:
+    - sed -i "s|^site_url = .*|site_url = \"${CI_PAGES_URL}/\"|" zensical.toml
+    - uv run --only-group docs zensical build --clean --strict
+    # GitLab Pages serves the `public` directory
+    - mv site public
+  cache:
+    key: uv-docs
+    paths:
+      - .uv-cache
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH

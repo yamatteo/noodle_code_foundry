@@ -2,7 +2,7 @@
 
 A [copier](https://copier.readthedocs.io/) generator for uv-managed Python
 projects. Answer a handful of questions and get a ready-to-run package, with
-optional Zola documentation, Jupyter notebook compilation, docs hosting CI and
+optional Zensical documentation, Jupyter notebook compilation, docs hosting CI and
 the pauli-braun Claude Code workflow. The generated project keeps no link back
 to this repository.
 
@@ -37,9 +37,9 @@ uv run my-project
 | `author_email` | — | Author email in `pyproject.toml` |
 | `license` | `MIT` | `MIT`, `Apache-2.0` or `None` (no LICENSE file, no `license` field) |
 | `copyright_year` | current year | Year in the MIT copyright notice (asked only for MIT) |
-| `zola_docs` | `false` | Adds a Zola documentation site in `zdocs/` with the MATbook theme |
-| `notebooks` | `false` | Adds `notebooks/`, the notebook compilation scripts and a `dev` dependency group (asked only with `zola_docs`) |
-| `docs_hosting` | `github-pages` | `github-pages`, `gitlab-pages` or `none`: which CI file deploys the docs (asked only with `zola_docs`) |
+| `docs` | `false` | Adds a Zensical documentation site in `docs/`, configured by `zensical.toml` |
+| `notebooks` | `false` | Adds `notebooks/`, the notebook compilation scripts and a `dev` dependency group (asked only with `docs`) |
+| `docs_hosting` | `github-pages` | `github-pages`, `gitlab-pages` or `none`: which CI file deploys the docs (asked only with `docs`) |
 | `pauli_braun` | `true` | Adds `.claude/settings.json` recommending the pauli-braun plugin |
 
 ## Pauli/Braun
