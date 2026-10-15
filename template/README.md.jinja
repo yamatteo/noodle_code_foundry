@@ -62,12 +62,50 @@ To strip notebook outputs when committing, set up a Git filter:
 This keeps the repository size small while preserving the notebook code and
 structure.
 {%- endif %}
-{%- if pauli_braun %}
 
 ## Claude Code
+{%- if pauli_braun %}
 
 This project recommends the
 [pauli-braun](https://github.com/yamatteo/pauli_braun) Claude Code plugin, a
 plan/review (Pauli) and build (Braun) workflow. Claude Code offers to install it
 when you trust this folder; run `/pauli` to start.
+{%- else %}
+
+The [pauli-braun](https://github.com/yamatteo/pauli_braun) Claude Code plugin
+is explicitly disabled in this project by `.claude/settings.json`, even if you
+have it installed. To turn it back on for yourself only, set
+`"pauli-braun@pauli-braun": true` under `enabledPlugins` in
+`.claude/settings.local.json`.
+{%- endif %}
+{%- if cluster_gateway %}
+
+## Cluster gateway
+
+This project may use the
+[cluster-gateway](https://gitlab.fbk.eu/mbortolotto/cluster_gateway) MCP server
+to run jobs on remote compute. The gateway is installed and registered once, at
+user scope; see its README. To make this project reachable, add an entry to
+`~/.config/cluster_gateway_mcp/config.yaml`:
+
+```yaml
+projects:
+  {{ project_slug }}:
+    local_root: <absolute path of this project>
+    downloads_subdir: gateway-results
+    origin_url: <URL the host clones fetch from>
+    allowed_branches: ["main"]
+    command: [<argv>, "{target}"]
+    env_allowed: []
+    artifact_globs: []
+    hosts:
+      <host>:
+        remote_root: <base clone path on the host>
+```
+
+Then make the base clone on each host, and run
+`cluster-gateway-admin deploy <host>` and `cluster-gateway-admin selftest <host>`.
+
+The gateway's read-only tools are pre-allowed in `.claude/settings.json`;
+Claude Code still asks before it submits, cancels or downloads.
 {%- endif %}

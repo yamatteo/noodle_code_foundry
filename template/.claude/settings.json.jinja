@@ -1,0 +1,32 @@
+{
+{%- if pauli_braun %}
+  "extraKnownMarketplaces": {
+    "pauli-braun": {
+      "source": {
+        "source": "github",
+        "repo": "yamatteo/pauli_braun"
+      }
+    }
+  },
+{%- endif %}
+  "enabledPlugins": {
+    "pauli-braun@pauli-braun": {{ pauli_braun | tojson }}
+  },
+  "permissions": {
+{%- if cluster_gateway %}
+    "allow": [
+      "mcp__cluster-gateway__list_projects",
+      "mcp__cluster-gateway__check_jobs",
+      "mcp__cluster-gateway__get_log",
+      "mcp__cluster-gateway__list_artifacts",
+      "mcp__cluster-gateway__host_usage",
+      "mcp__cluster-gateway__debug_job",
+      "mcp__cluster-gateway__runner_status"
+    ]
+{%- else %}
+    "deny": [
+      "mcp__cluster-gateway"
+    ]
+{%- endif %}
+  }
+}

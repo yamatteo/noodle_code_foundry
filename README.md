@@ -40,7 +40,8 @@ uv run my-project
 | `docs` | `false` | Adds a Zensical documentation site in `docs/`, configured by `zensical.toml` |
 | `notebooks` | `false` | Adds `notebooks/`, the notebook compilation scripts and a `dev` dependency group (asked only with `docs`) |
 | `docs_hosting` | `github-pages` | `github-pages`, `gitlab-pages` or `none`: which CI file deploys the docs (asked only with `docs`) |
-| `pauli_braun` | `true` | Adds `.claude/settings.json` recommending the pauli-braun plugin |
+| `pauli_braun` | `true` | Enables the pauli-braun plugin in `.claude/settings.json`, or explicitly disables it |
+| `cluster_gateway` | `false` | Allows the cluster-gateway MCP server's read-only tools in `.claude/settings.json`, or denies the server |
 
 ## Pauli/Braun
 
@@ -50,7 +51,18 @@ for a single-thread workflow: Pauli plans and reviews, Braun builds. When
 plugin's marketplace and enables the plugin, so Claude Code offers to install it
 when you trust the project folder. Run `/pauli` to start. It does not set an
 output style, so nobody is switched into Pauli mode by default. Answer `no` to
-leave it out.
+disable it explicitly in the generated project, even for users who have it
+installed; each user can turn it back on in `.claude/settings.local.json`.
+
+## Cluster gateway
+
+[cluster-gateway](https://gitlab.fbk.eu/mbortolotto/cluster_gateway) is an MCP
+server, installed and registered once at user scope; the generator installs
+nothing. When `cluster_gateway` is enabled, the generated
+`.claude/settings.json` pre-allows the gateway's read-only tools, `.gitignore`
+ignores its downloads, and the README shows the `projects:` entry to add to the
+gateway's config. Answer `no` to deny the server's tools in the generated
+project.
 
 ## Cookbook
 

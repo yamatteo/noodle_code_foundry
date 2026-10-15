@@ -64,5 +64,10 @@ docs_hosting:
 
 pauli_braun:
   type: bool
-  help: Recommend the pauli-braun Claude Code plugin (plan/review and build workflow)?
+  help: Enable the pauli-braun Claude Code plugin in this project (no = explicitly disabled)?
   default: true
+
+cluster_gateway:
+  type: bool
+  help: Allow the cluster-gateway MCP server in this project?
+  default: false
