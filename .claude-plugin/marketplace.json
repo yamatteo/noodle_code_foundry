@@ -1,0 +1,12 @@
+{
+  "name": "noodle-code-foundry",
+  "description": "Claude Code plugins used by projects generated with noodle_code_foundry.",
+  "owner": { "name": "yamatteo" },
+  "plugins": [
+    {
+      "name": "pauli-braun",
+      "description": "Single-thread Pauli (plan & review) / Braun (build) workflow: output styles as modes, hooks as guards, skills for the hand-offs.",
+      "source": { "source": "github", "repo": "yamatteo/pauli_braun" }
+    }
+  ]
+}

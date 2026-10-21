@@ -47,12 +47,29 @@ uv run my-project
 
 [pauli-braun](https://github.com/yamatteo/pauli_braun) is a Claude Code plugin
 for a single-thread workflow: Pauli plans and reviews, Braun builds. When
-`pauli_braun` is enabled, the generated `.claude/settings.json` registers the
-plugin's marketplace and enables the plugin, so Claude Code offers to install it
+`pauli_braun` is enabled, the generated `.claude/settings.json` registers this
+repository's [marketplace](#marketplace) and enables the plugin
+(`pauli-braun@noodle-code-foundry`), so Claude Code offers to install it
 when you trust the project folder. Run `/pauli` to start. It does not set an
 output style, so nobody is switched into Pauli mode by default. Answer `no` to
 disable it explicitly in the generated project, even for users who have it
 installed; each user can turn it back on in `.claude/settings.local.json`.
+
+## Marketplace
+
+This repository is also a Claude Code plugin marketplace. It lists the plugins
+the foundry's projects use; the plugins themselves live in their own
+repositories. Add it with:
+
+```
+/plugin marketplace add yamatteo/noodle_code_foundry
+```
+
+To list another plugin, add an entry with a `github` source to
+`.claude-plugin/marketplace.json`, and optionally a copier question that toggles
+it in `enabledPlugins` of `template/.claude/settings.json.jinja`. The
+marketplace is not part of generated projects, which register it as a GitHub
+source in `.claude/settings.json`.
 
 ## Cluster gateway
 

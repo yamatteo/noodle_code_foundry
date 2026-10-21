@@ -1,16 +1,16 @@
 {
 {%- if pauli_braun %}
   "extraKnownMarketplaces": {
-    "pauli-braun": {
+    "noodle-code-foundry": {
       "source": {
         "source": "github",
-        "repo": "yamatteo/pauli_braun"
+        "repo": "yamatteo/noodle_code_foundry"
       }
     }
   },
 {%- endif %}
   "enabledPlugins": {
-    "pauli-braun@pauli-braun": {{ pauli_braun | tojson }}
+    "pauli-braun@noodle-code-foundry": {{ pauli_braun | tojson }}
   },
   "permissions": {
 {%- if cluster_gateway %}
