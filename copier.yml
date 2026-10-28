@@ -67,6 +67,12 @@ pauli_braun:
   help: Enable the pauli-braun Claude Code plugin in this project (no = explicitly disabled)?
   default: true
 
+zenod:
+  type: bool
+  help: Enable the zenod docs-audit Claude Code plugin in this project (no = explicitly disabled)?
+  default: true
+  when: "{{ docs }}"
+
 cluster_gateway:
   type: bool
   help: Allow the cluster-gateway MCP server in this project?

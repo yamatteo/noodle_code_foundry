@@ -78,6 +78,24 @@ have it installed. To turn it back on for yourself only, set
 `"pauli-braun@noodle-code-foundry": true` under `enabledPlugins` in
 `.claude/settings.local.json`.
 {%- endif %}
+{%- if docs and zenod %}
+
+The docs follow the [zenod](https://github.com/yamatteo/zenodotus) standard,
+and this project recommends its Claude Code plugin (documentation audit tools).
+Claude Code offers to install it when you trust this folder. Run `/zenod:init`
+to create the local standard `.claude/zenod.md`, `/zenod:lint` to check the
+docs, `/zenod:audit` for semantic audits and `/zenod:import` to convert a PDF
+into a reference. `docs/references/` (imported, copyrighted text) and
+`docs/internal/` (private, git-ignored) are not published.
+{%- elif docs %}
+
+The [zenod](https://github.com/yamatteo/zenodotus) Claude Code plugin is
+explicitly disabled in this project by `.claude/settings.json`, even if you have
+it installed. To turn it back on for yourself only, set
+`"zenod@noodle-code-foundry": true` under `enabledPlugins` in
+`.claude/settings.local.json`. The docs layout still follows its standard:
+`docs/references/` and `docs/internal/` are not published.
+{%- endif %}
 {%- if cluster_gateway %}
 
 ## Cluster gateway

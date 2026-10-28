@@ -41,6 +41,7 @@ uv run my-project
 | `notebooks` | `false` | Adds `notebooks/`, the notebook compilation scripts and a `dev` dependency group (asked only with `docs`) |
 | `docs_hosting` | `github-pages` | `github-pages`, `gitlab-pages` or `none`: which CI file deploys the docs (asked only with `docs`) |
 | `pauli_braun` | `true` | Enables the pauli-braun plugin in `.claude/settings.json`, or explicitly disables it |
+| `zenod` | `true` | Enables the zenod docs-audit plugin in `.claude/settings.json`, or explicitly disables it (asked only with `docs`) |
 | `cluster_gateway` | `false` | Allows the cluster-gateway MCP server's read-only tools in `.claude/settings.json`, or denies the server |
 
 ## Pauli/Braun
@@ -54,6 +55,20 @@ when you trust the project folder. Run `/pauli` to start. It does not set an
 output style, so nobody is switched into Pauli mode by default. Answer `no` to
 disable it explicitly in the generated project, even for users who have it
 installed; each user can turn it back on in `.claude/settings.local.json`.
+
+## zenod
+
+[zenod](https://github.com/yamatteo/zenodotus) is a Claude Code plugin of
+documentation audit tools (a docs standard, a lint, PDF reference import, audits).
+It only concerns `docs/`, so the `zenod` question is asked only with `docs`.
+When enabled, the generated `.claude/settings.json` registers this
+repository's [marketplace](#marketplace) and enables `zenod@noodle-code-foundry`.
+Answer `no` to disable it explicitly; each user can turn it back on in
+`.claude/settings.local.json`. With `docs`, the project also gets the zenod
+docs skeleton whatever the answer: an `index.md` with zenod frontmatter,
+`docs/references/` and a git-ignored `docs/internal/`. Neither folder is
+published (`exclude_docs` in `zensical.toml`). The local standard
+`.claude/zenod.md` is not generated; run `/zenod:init` for it.
 
 ## Marketplace
 

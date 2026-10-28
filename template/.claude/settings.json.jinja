@@ -1,5 +1,5 @@
 {
-{%- if pauli_braun %}
+{%- if pauli_braun or (docs and zenod) %}
   "extraKnownMarketplaces": {
     "noodle-code-foundry": {
       "source": {
@@ -11,6 +11,9 @@
 {%- endif %}
   "enabledPlugins": {
     "pauli-braun@noodle-code-foundry": {{ pauli_braun | tojson }}
+{%- if docs %},
+    "zenod@noodle-code-foundry": {{ zenod | tojson }}
+{%- endif %}
   },
   "permissions": {
 {%- if cluster_gateway %}
