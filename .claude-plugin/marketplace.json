@@ -5,7 +5,7 @@
   "plugins": [
     {
       "name": "pauli-braun",
-      "description": "Single-thread Pauli (plan & review) / Braun (build) workflow: output styles as modes, hooks as guards, skills for the hand-offs.",
+      "description": "Single-thread Pauli (plan & review) / Braun (build) workflow: per-session modes, hooks as guards, skills for the hand-offs.",
       "source": { "source": "url", "url": "https://github.com/yamatteo/pauli_braun.git" }
     },
     {

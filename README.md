@@ -51,8 +51,8 @@ for a single-thread workflow: Pauli plans and reviews, Braun builds. When
 `pauli_braun` is enabled, the generated `.claude/settings.json` registers this
 repository's [marketplace](#marketplace) and enables the plugin
 (`pauli-braun@noodle-code-foundry`), so Claude Code offers to install it
-when you trust the project folder. Run `/pauli` to start. It does not set an
-output style, so nobody is switched into Pauli mode by default. Answer `no` to
+when you trust the project folder. Nothing in the generated settings starts a
+mode, so nobody is in Pauli mode until they run `/pauli`. Answer `no` to
 disable it explicitly in the generated project, even for users who have it
 installed; each user can turn it back on in `.claude/settings.local.json`.
 
